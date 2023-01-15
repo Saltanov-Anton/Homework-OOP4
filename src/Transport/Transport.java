@@ -1,9 +1,14 @@
 package Transport;
+import Drivers.*;
 
-public class Transport {
+
+
+public class Transport<T extends Driver> {
     protected String model;
     protected String brand;
     protected double volumeEngine;
+
+    private T driver;
 
     public Transport(String model, String brand, double volumeEngine) {
         this.model = model;
@@ -12,11 +17,20 @@ public class Transport {
     }
 
     public void start() {
-        System.out.println(this.model + " начал движение");
+        System.out.println(this.model + " начал движение под управлением водителя "
+                + driver.getName());
     }
 
     public void end() {
         System.out.println(this.model + " остановился");
+    }
+
+    public T getDriver() {
+        return driver;
+    }
+
+    public void setDriver(T driver) {
+        this.driver = driver;
     }
 
     public String getModel() {

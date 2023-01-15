@@ -1,3 +1,4 @@
+import Drivers.DriverB;
 import Transport.Bus;
 import Transport.Car;
 import Transport.Truck;
@@ -19,5 +20,10 @@ public class Main {
         Bus busTc2000 = new Bus("TC/2000", "Blue Bird", 5.9);
         Bus bus5921 = new Bus("5921", "LiAZ", 9.3);
 
+        DriverB driverVasya = new DriverB("Vasya", true, 5);
+        carSkyline.addDriver(driverVasya);
+
+        System.out.println("Водитель " + driverVasya.getName() + " управляет автомодилем "
+                + carSkyline.getModel() + " и будет учавствовать в заезде");
     }
 }
