@@ -23,9 +23,17 @@ public class Main {
         DriverB driverVasya = new DriverB("Vasya", true, 5);
         carSkyline.addDriver(driverVasya);
 
-        System.out.println("Водитель " + driverVasya.getName() + " управляет автомодилем "
+        System.out.println("Водитель " + driverVasya.getName() + " управляет автомобилем "
                 + carSkyline.getModel() + " и будет учавствовать в заезде");
 
-        
+        //carSkyline.setBodyType("Седан");
+        System.out.println(carSkyline.printType());
+
+        //busRoutemaster.setCapacity(15);
+        System.out.println(busRoutemaster.printType());
+
+        //truckMaz.setLoadCapacity(10F);
+        System.out.println(truckMaz.printType());
+
     }
 }
