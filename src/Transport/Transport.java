@@ -3,7 +3,7 @@ import Drivers.*;
 
 
 
-public class Transport<T extends Driver> {
+public abstract class Transport<T extends Driver> {
     protected String model;
     protected String brand;
     protected double volumeEngine;
@@ -56,4 +56,16 @@ public class Transport<T extends Driver> {
     public void setVolumeEngine(double volumeEngine) {
         this.volumeEngine = volumeEngine;
     }
+
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", volumeEngine=" + volumeEngine +
+                ", driver=" + driver +
+                '}';
+    }
+
+    public abstract String printType();
 }
