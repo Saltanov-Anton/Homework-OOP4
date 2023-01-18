@@ -48,6 +48,13 @@ public class Car<T extends DriverB> extends Transport implements Competing{
     }
 
     @Override
+    public void passDiagnostics(Driver driver) throws DriverInconsistencyException {
+        if (!driver.isHasDrivingLicense()) {
+            throw new DriverInconsistencyException("Отсутствие водительского удостовирения");
+        }
+    }
+
+    @Override
     public String printType() {
         if (bodyType != null) {
             return bodyType.toString();
@@ -72,8 +79,14 @@ public class Car<T extends DriverB> extends Transport implements Competing{
     }
 
     public void addDriver(T driver) {
-
-        super.setDriver(driver);
+        try {
+            passDiagnostics(driver);
+            super.setDriver(driver);
+        } catch (DriverInconsistencyException e) {
+            System.out.println("Водитель не может управлять " + this.getBrand()
+                    + " " + this.getModel() + " \n " +
+                    "Причина: " + e.getMessage());
+        }
     }
 
     public BodyType getBodyType() {

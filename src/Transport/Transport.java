@@ -18,6 +18,10 @@ public abstract class Transport<T extends Driver> {
 
     public abstract String printType();
 
+    public void passDiagnostics(T driver) throws DriverInconsistencyException {
+        System.out.println(this.getBrand() + " " + this.getModel() + " не может пройти диагностику");
+    }
+
     public void start() {
         System.out.println(this.model + " начал движение под управлением водителя "
                 + driver.getName());
