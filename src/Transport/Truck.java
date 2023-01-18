@@ -56,7 +56,7 @@ public class Truck<T extends DriverC> extends Transport implements Competing {
         }
     }
 
-    LoadCapacity loadCapacity;
+    private LoadCapacity loadCapacity;
 
     public Truck(String model, String brand, double volumeEngine) {
         super(model, brand, volumeEngine);

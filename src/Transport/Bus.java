@@ -45,7 +45,7 @@ public class Bus<T extends DriverD> extends Transport implements Competing{
         }
     }
 
-    Capacity capacity;
+    private Capacity capacity;
 
     public Bus(String model, String brand, double volumeEngine) {
         super(model, brand, volumeEngine);

@@ -15,7 +15,7 @@ public class Car<T extends DriverB> extends Transport implements Competing{
         VAN("Фургон"),
         MINIVAN("Минивэн");
 
-        String bodyType;
+        private String bodyType;
         BodyType(String bodyType) {
             this.bodyType = bodyType;
 

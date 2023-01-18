@@ -16,6 +16,8 @@ public abstract class Transport<T extends Driver> {
         this.volumeEngine = volumeEngine;
     }
 
+    public abstract String printType();
+
     public void start() {
         System.out.println(this.model + " начал движение под управлением водителя "
                 + driver.getName());
@@ -66,6 +68,4 @@ public abstract class Transport<T extends Driver> {
                 ", driver=" + driver +
                 '}';
     }
-
-    public abstract String printType();
 }
