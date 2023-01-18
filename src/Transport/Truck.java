@@ -1,5 +1,6 @@
 package Transport;
 
+import Drivers.Driver;
 import Drivers.DriverC;
 
 public class Truck<T extends DriverC> extends Transport implements Competing {
@@ -64,6 +65,13 @@ public class Truck<T extends DriverC> extends Transport implements Competing {
     }
 
     @Override
+    public void passDiagnostics(Driver driver) throws DriverInconsistencyException {
+        if (!driver.isHasDrivingLicense()) {
+            throw new DriverInconsistencyException("Отсутствие водительского удостовирения");
+        }
+    }
+
+    @Override
     public String printType() {
         if (loadCapacity != null) {
             return loadCapacity.toString();
@@ -88,8 +96,14 @@ public class Truck<T extends DriverC> extends Transport implements Competing {
     }
 
     public void addDriver(T driver) {
-
-        super.setDriver(driver);
+        try {
+            passDiagnostics(driver);
+            super.setDriver(driver);
+        } catch (DriverInconsistencyException e) {
+            System.out.println("Водитель не может управлять " + this.getBrand()
+                    + " " + this.getModel() + " \n " +
+                    "Причина: " + e.getMessage());
+        }
     }
 
     public LoadCapacity getLoadCapacity() {

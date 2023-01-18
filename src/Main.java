@@ -1,4 +1,5 @@
 import Drivers.DriverB;
+import Drivers.DriverC;
 import Transport.Bus;
 import Transport.Car;
 import Transport.Truck;
@@ -23,9 +24,12 @@ public class Main {
         DriverB driverVasya = new DriverB("Vasya", true, 5);
         carSkyline.addDriver(driverVasya);
 
+        DriverC driverPetya = new DriverC("Petr", true, 0);
+
         System.out.println("Водитель " + driverVasya.getName() + " управляет автомобилем "
                 + carSkyline.getModel() + " и будет учавствовать в заезде");
 
+        truckZil.addDriver(driverPetya);
 
     }
 }
