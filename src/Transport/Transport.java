@@ -1,6 +1,8 @@
 package Transport;
 import Drivers.*;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public abstract class Transport<T extends Driver> {
@@ -9,6 +11,8 @@ public abstract class Transport<T extends Driver> {
     protected double volumeEngine;
 
     private T driver;
+
+    private List<Mechanic> mechanics = new ArrayList<>();
 
     public Transport(String model, String brand, double volumeEngine) {
         this.model = model;
@@ -61,6 +65,19 @@ public abstract class Transport<T extends Driver> {
 
     public void setVolumeEngine(double volumeEngine) {
         this.volumeEngine = volumeEngine;
+    }
+
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+
+    public void setMechanics(Mechanic mechanic) {
+        this.mechanics.add(mechanic);
+    }
+
+    public String printDriverAndMachanic() {
+        return "Водитель - " + this.getDriver().getName() + " "
+                + "Механик - " + this.mechanics;
     }
 
     @Override
