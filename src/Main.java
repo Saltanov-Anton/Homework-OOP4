@@ -52,8 +52,8 @@ public class Main {
         raceTransport.add(trackKamaz);
         raceTransport.add(bus5921);
 
-//        System.out.println(carSkyline.printDriverAndMachanic());
-//        System.out.println(bus5921.printDriverAndMachanic());
+        System.out.println(carSkyline.printDriverAndMachanic());
+        System.out.println(bus5921.printDriverAndMachanic());
         System.out.println(bus5921.getMechanics());
 
 
