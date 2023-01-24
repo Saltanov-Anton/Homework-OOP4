@@ -9,6 +9,7 @@ import Transport.Mechanic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -43,14 +44,18 @@ public class Main {
         carSkyline.setMechanics(mechKurosawa);
         trackKamaz.setMechanics(mechPetrovich);
         bus5921.setMechanics(mechPetrovich);
+        bus5921.setMechanics(mechPetrovich);
+        bus5921.setMechanics(mechKurosawa);
 
-        List<Transport> raceTransport = new ArrayList<>();
+        List<Transport<?>> raceTransport = new ArrayList<>();
         raceTransport.add(carSkyline);
         raceTransport.add(trackKamaz);
         raceTransport.add(bus5921);
 
-        System.out.println(carSkyline.printDriverAndMachanic());
-        System.out.println(bus5921.printDriverAndMachanic());
+//        System.out.println(carSkyline.printDriverAndMachanic());
+//        System.out.println(bus5921.printDriverAndMachanic());
+        System.out.println(bus5921.getMechanics());
+
 
     }
 }
