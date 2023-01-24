@@ -96,4 +96,6 @@ public class Car<T extends DriverB> extends Transport implements Competing{
     public void setBodyType(String type) {
         this.bodyType = BodyType.findByBodyType(type);
     }
+
+
 }

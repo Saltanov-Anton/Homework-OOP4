@@ -87,4 +87,6 @@ public class Bus<T extends DriverD> extends Transport implements Competing{
     public void setCapacity(Integer capacity) {
         this.capacity = Capacity.findByCapacity(capacity);
     }
+
+
 }

@@ -113,4 +113,6 @@ public class Truck<T extends DriverC> extends Transport implements Competing {
     public void setLoadCapacity(Float loadCapacity) {
         this.loadCapacity = LoadCapacity.findByLoad(loadCapacity);
     }
+
+
 }

@@ -1,6 +1,7 @@
 package Transport;
 import Drivers.*;
 
+import java.util.*;
 
 
 public abstract class Transport<T extends Driver> {
@@ -9,6 +10,8 @@ public abstract class Transport<T extends Driver> {
     protected double volumeEngine;
 
     private T driver;
+
+    private Map<Transport<?>, Mechanic<?>> mechanics = new HashMap();
 
     public Transport(String model, String brand, double volumeEngine) {
         this.model = model;
@@ -63,6 +66,19 @@ public abstract class Transport<T extends Driver> {
         this.volumeEngine = volumeEngine;
     }
 
+    public Map<Transport<?>, Mechanic<?>> getMechanics() {
+        return mechanics;
+    }
+
+    public void setMechanics(Mechanic<?> mechanic) {
+        this.mechanics.put(this, mechanic);
+    }
+
+    public String printDriverAndMachanic() {
+        return "Водитель - " + this.getDriver().getName() + " "
+                + "Механик - " + this.mechanics;
+    }
+
     @Override
     public String toString() {
         return "Transport{" +
@@ -71,5 +87,18 @@ public abstract class Transport<T extends Driver> {
                 ", volumeEngine=" + volumeEngine +
                 ", driver=" + driver +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport<?> transport = (Transport<?>) o;
+        return Double.compare(transport.volumeEngine, volumeEngine) == 0 && model.equals(transport.model) && brand.equals(transport.brand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(model, brand, volumeEngine);
     }
 }
