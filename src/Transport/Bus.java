@@ -88,13 +88,5 @@ public class Bus<T extends DriverD> extends Transport implements Competing{
         this.capacity = Capacity.findByCapacity(capacity);
     }
 
-//    @Override
-//    public void setMechanics(Transport transport, Mechanic mechanic) {
-//        if (transport.hashCode() == this.hashCode()) {
-//            super.setMechanics(this, mechanic);
-//        } else {
-//            System.out.println("Не та машина");
-//        }
-//
-//    }
+
 }

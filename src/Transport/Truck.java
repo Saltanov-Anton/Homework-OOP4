@@ -114,13 +114,5 @@ public class Truck<T extends DriverC> extends Transport implements Competing {
         this.loadCapacity = LoadCapacity.findByLoad(loadCapacity);
     }
 
-//    @Override
-//    public void setMechanics(Transport transport, Mechanic mechanic) {
-//        if (transport.hashCode() == this.hashCode()) {
-//            super.setMechanics(transport, mechanic);
-//        } else {
-//            System.out.println("Не та машина");
-//        }
-//
-//    }
+
 }

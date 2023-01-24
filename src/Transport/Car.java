@@ -89,16 +89,6 @@ public class Car<T extends DriverB> extends Transport implements Competing{
         }
     }
 
-//    @Override
-//    public void setMechanics(Transport transport, Mechanic mechanic) {
-//        if (transport.hashCode() == this.hashCode()) {
-//            super.setMechanics(transport, mechanic);
-//        } else {
-//            System.out.println("Не та машина");
-//        }
-//
-//    }
-
     public BodyType getBodyType() {
         return bodyType;
     }
