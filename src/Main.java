@@ -36,6 +36,9 @@ public class Main {
         DriverD driverMihalich = new DriverD("Mihalich", true, 25);
         bus5921.addDriver(driverMihalich);
 
+        DriverD driverD = new DriverD("Mihalich", true, 25);
+        bus5921.addDriver(driverMihalich);
+
         Mechanic mechKurosawa = new Mechanic("Takumi Kurosawa", "Nissan");
 
         Mechanic mechPetrovich = new Mechanic("Semen Petrovich", "STO");
@@ -59,7 +62,7 @@ public class Main {
         setDriver.add(driverVasya);
         setDriver.add(driverPetya);
         setDriver.add(driverMihalich);
-        setDriver.add(driverPetya);
+        setDriver.add(driverD);
 
         Iterator<Driver> iter = setDriver.iterator();
 
