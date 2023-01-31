@@ -1,3 +1,4 @@
+import Drivers.Driver;
 import Drivers.DriverB;
 import Drivers.DriverC;
 import Drivers.DriverD;
@@ -7,9 +8,7 @@ import Transport.Transport;
 import Transport.Truck;
 import Transport.Mechanic;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,6 +36,9 @@ public class Main {
         DriverD driverMihalich = new DriverD("Mihalich", true, 25);
         bus5921.addDriver(driverMihalich);
 
+        DriverD driverD = new DriverD("Mihalich", true, 25);
+        bus5921.addDriver(driverMihalich);
+
         Mechanic mechKurosawa = new Mechanic("Takumi Kurosawa", "Nissan");
 
         Mechanic mechPetrovich = new Mechanic("Semen Petrovich", "STO");
@@ -56,6 +58,16 @@ public class Main {
         System.out.println(bus5921.printDriverAndMachanic());
         System.out.println(bus5921.getMechanics());
 
+        Set<Driver> setDriver = new HashSet<>();
+        setDriver.add(driverVasya);
+        setDriver.add(driverPetya);
+        setDriver.add(driverMihalich);
+        setDriver.add(driverD);
 
+        Iterator<Driver> iter = setDriver.iterator();
+
+        while (iter.hasNext()) {
+            System.out.println(iter.next());
+        }
     }
 }

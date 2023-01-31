@@ -1,6 +1,9 @@
 package Drivers;
 
 import Transport.*;
+
+import java.util.Objects;
+
 public class Driver {
 
     private String name;
@@ -58,5 +61,18 @@ public class Driver {
                 ", hasDrivingLicense=" + hasDrivingLicense +
                 ", experience=" + experience +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return hasDrivingLicense == driver.hasDrivingLicense && experience == driver.experience && Objects.equals(name, driver.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, hasDrivingLicense, experience);
     }
 }
